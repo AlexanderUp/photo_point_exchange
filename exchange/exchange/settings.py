@@ -11,7 +11,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: list = []
 
 
 INSTALLED_APPS = [
@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rates.apps.RatesConfig',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -86,3 +87,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# project related settings
+NUMBER_OF_RESULTS_TO_RETURN: int = 10
+
+OUTER_API_REQUEST_MIN_PERIOD_SECONDS: int = 10

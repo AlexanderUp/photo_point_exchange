@@ -4,9 +4,10 @@ skip-magic-trailing-comma=false
 line-length=89
 
 [tool.flake8]
-ignore=[]
+ignore=['D100','D101','D102','D103','D104','D105','D106','WPS100','WPS305','WPS306',]
 per-file-ignores = [
-
+    'settings.py:WPS226,WPS407,E501',
+    'services.py:WPS432',
 ]
 exclude=['.git', 'env/', 'venv/', 'temp/', '*.md', '__pycache__/', '*/migrations/*.py']
 max-cognitive-complexity=10
@@ -14,9 +15,9 @@ max-line-length=89
 class_attributes_order=['field', 'meta_class', 'nested_class', 'magic_method', 'property_method', 'static_method', 'class_method', 'method', 'private_method']
 
 [tool.isort]
-known_first_party=[]
+known_first_party=['rates',]
 profile='black'
 
 [tool.mypy]
-exclude=['venv/']
+exclude=['venv/', 'migrations/']
 ignore_missing_imports=true

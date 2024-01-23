@@ -1,0 +1,4 @@
+-r base.txt
+
+mypy==1.8.0
+types-requests==2.31.0.20240106
